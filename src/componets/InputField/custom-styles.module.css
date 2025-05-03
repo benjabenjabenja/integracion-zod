@@ -1,0 +1,37 @@
+.containerInputField {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+.label {
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input:focus + label {
+    transform: translateY(-25px);
+    font-size: 0.8rem;
+    color: #333;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    text-align: left;
+}
