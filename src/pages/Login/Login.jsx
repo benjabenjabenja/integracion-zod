@@ -107,8 +107,17 @@ export const Login = () => {
 
                 {/* REMEMBER ME */}
                 <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value={form.rememberMe.value} onChange={handleRememberMe} />
-                    <label className="form-check-label" htmlFor="rememberMe">{LOGIN_FORM.REMEMBER_ME.LABEL}</label>
+                    <input 
+                        className="form-check-input" 
+                        type="checkbox" 
+                        value={form.rememberMe.value} 
+                        onChange={handleRememberMe} />
+                    <label 
+                        className="form-check-label" 
+                        htmlFor="rememberMe"
+                    >
+                        {LOGIN_FORM.REMEMBER_ME.LABEL}
+                    </label>
                 </div>
                 
                 {/* REDIRECTION TO REGISTER */}
@@ -119,7 +128,13 @@ export const Login = () => {
                 </div>
                 
                 {/* BUTTON LOGIN */}
-                <button type="submit" className="buttonRegister" disabled={!validForm}>{LOGIN_FORM.BUTTON_LOGIN.LABEL}</button>
+                <button 
+                    type="submit" 
+                    className="buttonRegister" 
+                    disabled={!validForm}
+                >
+                    {LOGIN_FORM.BUTTON_LOGIN.LABEL}
+                </button>
 
             </form>
         </div>
