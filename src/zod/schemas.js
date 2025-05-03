@@ -5,8 +5,12 @@ import {
 } from "../utils/const";
 
 export const loginSchema = z.object({
-  email: z.string().email(),
-  password: z.string().min(8),
+  	email: z.string().email({ 
+		message: LOGIN_FORM.EXTRA_VALIDATIONS.EMAIL.ERROR_MESSAGE 
+	}),
+  	password: z.string().min(MIN_CARACTERS_PASSWORD, { 
+		message: LOGIN_FORM.EXTRA_VALIDATIONS.PASSWORD.ERROR_MESSAGE 
+	}),
 });
 
 export const registerSchema = z.object({
@@ -24,7 +28,9 @@ export const registerSchema = z.object({
 	}).refine(
 		(val) => val === registerSchema.password, { 
 			message: REGISTER_FORM.EXTRA_VALIDATIONS.CONFIRM_PASSWORD.ERROR_MESSAGE,
-			path: [REGISTER_FORM.INPUT_FIELDS.CONFIRM_PASSWORD.FORM_INPUT_NAME]
+			path: [
+				REGISTER_FORM.INPUT_FIELDS.CONFIRM_PASSWORD.FORM_INPUT_NAME
+			]
 		}),
 });
 
